@@ -3,6 +3,13 @@ public class Product {
     private double price;
     private String name;
 
+    public Product(String name, double price, int id)
+    {
+        this.name = name;
+        this.price = price;
+        this.id = id;
+    }
+
     public void setproductname(String nm){
         nm = name;
 
@@ -12,8 +19,8 @@ public class Product {
 
     }
 
-    public void setid(int id){
-        id = id;
+    public void setid(int id1){
+        id1 = id;
 
     }
 
@@ -25,13 +32,16 @@ public class Product {
         return price;
     }
 
+    public String getName() {
+        return name;
+    }
 
     @Override
     public String toString() {
         return "product{" +
                 "id=" + id +
-                ", prijs=" + price +
-                ", naam=" + name +
+                ", Price=" + price +
+                ", Name=" + name +
                 '}';
     }
 }

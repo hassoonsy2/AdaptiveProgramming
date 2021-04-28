@@ -8,12 +8,17 @@ public class Customer {
     private Peyment peyment;
     private ArrayList<Product>  new_ietemstobuy = new ArrayList<Product>();
 
-
-
-    public void addtocart(Product product_to_buy) {
-        product_to_buy = product;
-        new_ietemstobuy.add(product_to_buy);
+    public Customer(String name, int id)
+    {
+        name = name;
+        id = id;
     }
+
+    public Customer() {
+
+    }
+
+
 
     public void makepeyment(double price_input , ArrayList<Product> new_ietemstobuy1, String payment_type ) {
 

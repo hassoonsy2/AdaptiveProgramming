@@ -1,4 +1,3 @@
-
 //interface
 public interface Peyment {
     Customer customer = new Customer();
@@ -27,6 +26,5 @@ public interface Peyment {
 
 
 
-    
-}
 
+}

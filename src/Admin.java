@@ -3,12 +3,22 @@ public class Admin {
     private String name;
     private Product product;
 
-    public void addProducts(String productname , int product_id , Double product_price ) {
-        product.setid(product_id);
-        product.setproductprice(product_price);
-        product.setproductname(productname);
 
-        System.out.println("There is a new product  : " + product + "\n");
+    public Admin(String name, int id, Product product)
+    {
+        this.name = name;
+        this.id = id;
+        this.product = product;
+
+    }
+
+    public void addProducts(Product product) {
+
+        int id3 = product.getId();
+        Double price4 = product.getPrice();
+         String name4 = product.getName();
+
+
 
     }
 

@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class Shoppingcart {
@@ -6,8 +5,11 @@ public class Shoppingcart {
 
     private ArrayList<Double> prices = new ArrayList<Double>();
 
+
     private double totaalprice;
     private Product product;
+
+
 
 
 
@@ -22,7 +24,8 @@ public class Shoppingcart {
         product_list1.remove(product1);
     }
 
-    public void addtocart(Product product1 , ArrayList<Product> product_list1) {
+    public void addtocart(Product product1) {
+        ArrayList<Product> product_list1 = product_list;
         product1 = product;
         product_list1.add(product1);
     }
@@ -48,4 +51,6 @@ public class Shoppingcart {
                 ", product=" + product +
                 '}';
     }
+
+
 }
