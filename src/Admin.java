@@ -40,10 +40,10 @@ public class Admin {
 
     @Override
     public String toString() {
-        return "Admin{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ",added product=" + product +
-                '}';
+        return "Admin  :" +
+                "ID :" + id + "\n"+
+                "Name : "   + name + '\n' +
+                "Added Products : " + product + "\n"
+                ;
     }
 }

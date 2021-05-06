@@ -5,14 +5,26 @@ public class Customer {
     private String naam;
     private Shoppingcart shoppingcart;
     private Product product;
-    private Peyment peyment;
+    private Paymentmethode peyment;
     private ArrayList<Product>  new_ietemstobuy = new ArrayList<Product>();
+    private String Cardname;
+    private String Cardnumber;
+    private String Paymenttype;
 
-    public Customer(String name, int id)
+    public Customer(String name, int id ,Shoppingcart shoppingcart, String Cardname1, String Cardnumber,String Paymenttype)
     {
-        name = name;
-        id = id;
+
+        this.naam = name;
+        this.id = id;
+
+        this.shoppingcart = shoppingcart;
+        this.Cardname = Cardname1;
+        this.Cardnumber = Cardnumber;
+        this.Paymenttype = Paymenttype;
+
     }
+
+
 
     public Customer() {
 
@@ -20,16 +32,32 @@ public class Customer {
 
 
 
-    public void makepeyment(double price_input , ArrayList<Product> new_ietemstobuy1, String payment_type ) {
+    public static Paymentmethode makepayment(String cardname,String cardnumber ,String payment_type ) {
+        switch (payment_type) {
+            case "credit":
+
+                return new Creditcard(cardname ,cardnumber );
+            case "ideal":
+                return new Ideal(cardname ,cardnumber); }
 
 
-        peyment.setPaymenttype(payment_type);
-        if (price_input == shoppingcart.gettotaalprice(new_ietemstobuy1)){
-            peyment.setpaymentstatus(true);
-        }
-        else {
-            peyment.setpaymentstatus(false);
-        }
+
+        throw new IllegalArgumentException();
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    public String order(Paymentmethode method) {
+        return method.pay(shoppingcart.gettotaalprice(shoppingcart.getproduct()));
 
 
     }
@@ -52,14 +80,15 @@ public class Customer {
         return this.naam;
     }
 
+
+
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
-                ", naam='" + naam + '\'' +
-                ", shoppingcart=" + shoppingcart +
-                ", product=" + product +
-                ", recent ietems=" + new_ietemstobuy +
-                '}';
+                "iD : " + id + "\n"+
+                ", Name : " + naam + '\n' +
+                 shoppingcart.toString()+
+                "Order ; "+order(makepayment(Cardname,Cardnumber,Paymenttype))
+                ;
     }
 }

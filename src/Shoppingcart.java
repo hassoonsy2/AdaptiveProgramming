@@ -25,16 +25,19 @@ public class Shoppingcart {
     }
 
     public void addtocart(Product product1) {
-        ArrayList<Product> product_list1 = product_list;
-        product1 = product;
-        product_list1.add(product1);
+
+        product_list.add(product1);
     }
 
     public double gettotaalprice(ArrayList<Product> product_list1){
         ArrayList<Double> prices1 = prices;
         for (Product i : product_list1){
-            double singel_price = i.getPrice();
-            prices1.add(singel_price);
+            if(i != null){
+                double singel_price = i.getPrice();
+                prices1.add(singel_price);
+
+            }
+
 
         }
         return prices1.stream().mapToDouble(f -> f.doubleValue()).sum();
@@ -42,14 +45,15 @@ public class Shoppingcart {
 
 
     }
+    public double getTotaalprice(){
+        return totaalprice;
+    }
 
     @Override
     public String toString() {
-        return "Shoppingcart{" +
-                "product_list=" + product_list +
-                ", totaalprice=" + gettotaalprice(product_list ) +
-                ", product=" + product +
-                '}';
+        return "Shoppingcart : " +
+                "product_list=" + product_list +'\n'
+                ;
     }
 
 
