@@ -1,4 +1,4 @@
-
+import java.awt.*;
 
 public class Rit extends Stap {
     private final double afstand;
@@ -21,5 +21,15 @@ public class Rit extends Stap {
     @Override
     public Stap clone() {
         return new Rit(get_begin_id(), get_eind_id(), get_prijs());
+    }
+
+    @Override
+    public Color get_color() {
+        return Color.RED;
+    }
+
+    @Override
+    public int ghrap_offset() {
+        return -2;
     }
 }

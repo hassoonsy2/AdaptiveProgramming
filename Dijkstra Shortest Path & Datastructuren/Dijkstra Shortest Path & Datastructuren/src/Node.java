@@ -1,3 +1,5 @@
+import java.awt.*;
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +12,14 @@ public class Node implements Comparable<Node> {
     private final List<Stap> verbindingen_in = new ArrayList<>();
     public double prijs;
     public Stap vorige_stap;
+    int x;
+    int y;
+    int size = 35;
 
-    public Node(int id){
-    this.id =id;}
+    public Node(int id ,int x, int y){
+    this.id =id;
+        this.x = x;
+        this.y = y;}
 
 
 
@@ -37,6 +44,24 @@ public class Node implements Comparable<Node> {
         if(connctie.get_begin_id() == id) {
             this.verbindingen_out.add(connctie);
         }
+    }
+
+    public boolean mouse_on(int mouse_x, int mouse_y) {
+        double afstand = Point2D.distance(x, y,  mouse_x, mouse_y);
+        return afstand < size;
+    }
+
+    void g_default(Graphics g) {
+        setG(g, Color.WHITE);
+    }
+
+    void setG(Graphics g, Color color) {
+        g.setColor(color);
+        g.fillOval(x-size/2, y-size/2, size, size);
+        g.setColor(Color.BLUE);
+        g.drawOval(x-size/2, y-size/2, size, size);
+        g.setFont(new Font("Helvetica", Font.PLAIN, 15));
+        g.drawString(""+id, x-6, y+7);
     }
     @Override
     public int compareTo(Node node) {

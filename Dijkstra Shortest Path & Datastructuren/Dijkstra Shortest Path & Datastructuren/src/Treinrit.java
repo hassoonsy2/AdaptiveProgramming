@@ -1,4 +1,4 @@
-
+import java.awt.*;
 
 public class Treinrit extends Stap {
     private final double tijd;
@@ -22,6 +22,16 @@ public class Treinrit extends Stap {
     public Stap clone() {
         return new Treinrit(get_begin_id(), get_eind_id(), get_prijs());
     }
+    @Override
+    public Color get_color() {
+        return Color.RED;
+    }
+
+    @Override
+    public int ghrap_offset() {
+        return 4;
+    }
+
 
 
 }

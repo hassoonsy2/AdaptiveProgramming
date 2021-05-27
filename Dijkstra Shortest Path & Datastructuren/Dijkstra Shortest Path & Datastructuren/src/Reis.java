@@ -24,19 +24,19 @@ public class Reis {
         return string_builder.toString();
     }
 
-    public List<Stap> get_steps() {
+    public List<Stap> get_stapen() {
         return staps;
     }
 
     public double total_kosten() {
         double total_cost = 0;
-        for(Stap stap : get_steps()) {
+        for(Stap stap : get_stapen()) {
             total_cost += stap.get_prijs();
         }
         return total_cost;
     }
 
-    public String get_unit() {
-        return get_steps().get(0).get_eenheid();
+    public String get_eenheid() {
+        return get_stapen().get(0).get_eenheid();
     }
 }

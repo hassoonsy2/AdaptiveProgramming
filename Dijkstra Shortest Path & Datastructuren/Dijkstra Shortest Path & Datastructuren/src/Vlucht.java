@@ -1,4 +1,4 @@
-
+import java.awt.*;
 
 public class Vlucht extends Stap {
     private final double prijs;
@@ -7,6 +7,8 @@ public class Vlucht extends Stap {
         super(begin_id, eind_id);
         this.prijs = prijs;
     }
+
+
 
     @Override
     public double get_prijs() {
@@ -23,4 +25,14 @@ public class Vlucht extends Stap {
         return new Vlucht(get_begin_id(), get_eind_id(), get_prijs());
     }
 
+    @Override
+    public Color get_color() {
+        return Color.RED;
+    }
+
+    @Override
+    public int ghrap_offset() {
+        return 2;
+    }
 }
+
