@@ -1,9 +1,18 @@
+import java.io.PrintStream;
+import java.util.ArrayList;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+
+
 public class Main {
     public static void main(String[] args){
         Machine machine = new Machine();
-        TestUnit TestUnit = new TestUnit();
-        TestUnit.diamant_structuur(machine);
-        TestUnit.zeszijdige_dobbelsteen_structuur(machine);
+        Test_Unit TestUnit = new TestUnit();
+        Test_Unit.diamant_structuur(machine);
+        Test_Unit.zeszijdige_dobbelsteen_structuur(machine);
+        TestUnit.achtzijdige_blokjesstructuur(machine);
+
 
     }
 }
